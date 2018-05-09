@@ -1,0 +1,21 @@
+.wrap h1 {
+	line-height:32px;
+	vertical-align:middle;
+	height:32px;
+	font-size:32px;
+}
+.wrap h1 .ltm-ico {
+	background: url('../img/ltm/favicon-32x32.png') no-repeat;
+	width:32px;
+	height:32px;
+	display:inline-block;
+}
+.status {
+	padding-left:10px;
+}
+.status.positive {
+	border-left:10px solid #32cd32;
+}
+.status.negative {
+	border-left:10px solid #c70e0e;
+}

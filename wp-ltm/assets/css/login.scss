@@ -1,0 +1,45 @@
+@import "_1_variables";
+@import "_2_mixins";
+@import "_3_fonts";
+@import "_4_reset";
+$path_brand: quote('../img/ltm/');
+$path: quote('../img/');
+
+#login {
+	@include size(100%, 100%);
+	background-color: $color_light_blue;
+	position: absolute;
+	input {
+		width: calc(100% - 50px);
+		@include v-height(50px);
+		float: left;
+		padding: 0 10px;
+		@include box-sizing();
+		@include border-radius(0px);
+	}
+	button {
+        background: $color_green;
+        @include size(100%, 50px);
+    }
+	.login-help {
+		margin-top: 1rem;
+		a {
+			color: $color_white;
+		}
+	}
+}
+
+@media screen and (min-width:1px) and (max-width: 576px) {
+	#login {
+		@include size(100%, 100%);
+		background-color: $color_light_blue;
+		position: absolute;
+		#brand {
+			background-size: cover;
+			width: 160px;
+			height: 110px;
+			margin: 15px auto;
+		}
+	}
+}
+	

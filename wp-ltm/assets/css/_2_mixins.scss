@@ -1,0 +1,139 @@
+@mixin sprite($position, $size: $sprite_size, $src: $sprite_src) {
+    background: {
+        image: url('#{$src}');
+        size: #{$size};
+        position: #{$position};
+    }
+}
+
+@mixin fix-clear {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+@mixin font($font-family, $style: normal, $weight: normal) {
+    //font-family: quote($font-family);
+    font-family: "#{$font-family}";
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin size($w, $h: $w) {
+    width: $w;
+    height: $h;
+}
+
+@mixin v-height($size) {
+    @if $size == 0 {
+        line-height: normal;
+        height: auto;
+    }
+    @else {
+        line-height: $size;
+        height: $size;
+    }
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content
+    }
+
+    &:-ms-input-placeholder {
+        @content
+    }
+
+    &::-moz-placeholder {
+        @content
+    }
+
+    &:-moz-placeholder {
+        @content
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+}
+
+@mixin opacity($value) {
+    $IEValue: $value*100;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+        filter: alpha(opacity=$IEValue);
+    opacity: $value;
+}
+
+@mixin linearGradient($top, $bottom) {
+    background: $top;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom));
+    background: -webkit-linear-gradient(top, $top 0%,$bottom 100%);
+    background:   -moz-linear-gradient(top, $top 0%, $bottom 100%);
+    background:     -ms-linear-gradient(top, $top 0%,$bottom 100%);
+    background:      -o-linear-gradient(top, $top 0%,$bottom 100%);
+    background:         linear-gradient(to bottom, $top 0%,$bottom 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+}
+
+@mixin box-sizing() {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@mixin transition($property, $duration, $timing-function, $delay) {
+    -webkit-transition: $property, $duration, $timing-function, $delay;
+       -moz-transition: $property, $duration, $timing-function, $delay;
+         -o-transition: $property, $duration, $timing-function, $delay;
+            transition: $property, $duration, $timing-function, $delay;
+}
+
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+       -moz-transform: $transforms;
+        -ms-transform: $transforms;
+         -o-transform: $transforms;
+            transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+
+@mixin translate ($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin skew ($x, $y) {
+    @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin text-shadow($left, $top, $blur, $colorHex) {
+    -webkit-text-shadow: $left $top $blur $colorHex;
+       -moz-text-shadow: $left $top $blur $colorHex;
+            text-shadow: $left $top $blur $colorHex;
+}
+
+@mixin box-shadow($left, $top, $blur, $spread, $colorRGBA, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow: inset $left $top $blur $spread $colorRGBA;
+           -moz-box-shadow: inset $left $top $blur $spread $colorRGBA;
+                box-shadow: inset $left $top $blur $spread $colorRGBA;
+    }
+    @else {
+        -webkit-box-shadow: $left $top $blur $spread $colorRGBA;
+           -moz-box-shadow: $left $top $blur $spread $colorRGBA;
+                box-shadow: $left $top $blur $spread $colorRGBA;
+    }
+}

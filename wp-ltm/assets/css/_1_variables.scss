@@ -1,0 +1,20 @@
+$color_white:        #fff;
+$color_black:        #000;
+
+$color_dark_blue:    #141C45;
+$color_middle_blue:  #035a93;
+$color_light_blue:   #63b2db;
+
+$color_green:        #ced242;
+$color_gray:         #63717a;
+$color_red:          #da2525;
+
+$color_border:       #eee;
+
+$zindex-dropdown:       1000 !default;
+$zindex-sticky:         1020 !default;
+$zindex-fixed:          1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal:          1050 !default;
+$zindex-popover:        1060 !default;
+$zindex-tooltip:        1070 !default;

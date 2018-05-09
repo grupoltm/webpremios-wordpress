@@ -1,0 +1,82 @@
+* {
+    font-family: 'Lato';
+    border: 0;
+    color: $color_gray;
+}
+
+strong,
+b,
+th {
+    font-family: 'Lato Bold';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato Black';
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a,
+button,
+select,
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.btn {
+    border: none;
+    text-align: left;
+    .fas {
+        margin-right: 5px;
+        font-size: 14px;
+    }
+}
+.badge-primary {
+    background-color: $color_middle_blue;
+}
+.btn-primary {
+    background-color: $color_middle_blue;
+    &:hover {
+        background-color: darken($color_middle_blue, 10%);
+    }
+    .fas {
+        color: $color_white;
+    }
+}
+
+.btn-secondary {
+    background-color: $color_green;
+    color: $color_dark_blue;
+    .fas {
+        color: $color_dark_blue;
+    }
+    &:hover {
+        background-color: darken($color_green, 7%);
+        color: $color_dark_blue;
+    }
+}
+
+
+
+.transition {
+    @include transition(all, .5s, ease, .5s);
+}
+
+.slow-transition {
+    @include transition(all, 1.5s, ease, 1.5s);
+}
+
+.no-transition {
+    @include transition(all, 0s, ease, 0s);
+}
