@@ -1,0 +1,16 @@
+/**
+ * 
+ * Theme Name: Webprêmios LTM
+ * Theme URI: https://github.com/grupoltm/webpremios-wordpress
+ * Author: the LTM Frontend team
+ * Author URI: http://www.grupoltm.com.br/
+ * Description: Webprêmios integrado ao seu tema do wordpress.
+ * Version: 1.0
+ * Tags: webpremios, loyalty, premiação, fidelidade, resgate, recompensa.
+ * Text Domain: wp-ltm
+ * 
+ * É necessário geração da chave da API para funcionamento. 
+*/
+
+@import "assets/lib/bootstrap-4.0.0-dist/css/bootstrap.min.css";
+@import "assets/css/main.min.css";

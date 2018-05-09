@@ -1,0 +1,35 @@
+$font_lato: ( 
+    font_1: ( name: 'Lato',				filename: 'lato-regular',		style: normal, weight: normal ),
+    font_2: ( name: 'Lato Light',		filename: 'lato-light',			style: normal, weight: normal ),
+    font_3: ( name: 'Lato Bold',		filename: 'lato-bold',			style: normal, weight: normal ),
+    font_4: ( name: 'Lato Black',		filename: 'lato-black',			style: normal, weight: normal )
+);
+$font_circular: ( 
+    font_1: ( name: 'Circular',			filename: 'circular-medium',	style: normal, weight: normal ),
+    font_2: ( name: 'Circular Book',	filename: 'circular-book',		style: normal, weight: normal ),
+    font_3: ( name: 'Circular Bold',	filename: 'circular-bold',		style: normal, weight: normal ),
+    font_4: ( name: 'Circular Black',	filename: 'circular-black',		style: normal, weight: normal )
+); 
+
+@each $font, $font_prop in $font_lato {
+	@font-face {
+		font-family: map-get($font_prop, name);
+		src: url('../font/lato/' + map-get($font_prop, filename) + '-webfont.eot');
+		src: url('../font/lato/' + map-get($font_prop, filename) + '-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../font/lato/' + map-get($font_prop, filename) + '-webfont.woff') format('woff'),
+			 url('../font/lato/' + map-get($font_prop, filename) + '-webfont.woff2') format('woff2');
+		font-weight: map-get($font_prop, weight);
+		font-style: map-get($font_prop, style); 
+	}     
+}
+@each $font, $font_prop in $font_circular {
+	@font-face {
+		font-family: map-get($font_prop, name);
+		src: url('../font/circular/' + map-get($font_prop, filename) + '-webfont.eot');
+		src: url('../font/circular/' + map-get($font_prop, filename) + '-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../font/circular/' + map-get($font_prop, filename) + '-webfont.woff') format('woff'),
+			 url('../font/circular/' + map-get($font_prop, filename) + '-webfont.woff2') format('woff2');
+		font-weight: map-get($font_prop, weight);
+		font-style: map-get($font_prop, style); 
+	}     
+}
